@@ -19,8 +19,26 @@ dnf5 copr enable -y hermitfeather/hyprland
 
 dnf5 install -y \
     hyprland \
+    hyprland-guiutils \
     xdg-desktop-portal-hyprland \
-    uwsm
+    uwsm \
+    rofi \
+    waybar \
+    swaync \
+    swww \
+    hypridle \
+    hyprlock \
+    nwg-displays \
+    wl-clipboard \
+    cliphist \
+    grim \
+    slurp \
+    swappy \
+    brightnessctl \
+    playerctl \
+    pavucontrol
+
+dnf5 copr disable -y hermitfeather/hyprland
 
 # Use a COPR Example:
 #
