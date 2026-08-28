@@ -7,15 +7,16 @@ cp -avf "/ctx/system_files"/. /
 
 ### Install packages
 
-# Packages can be installed from any enabled yum repo on the image.
-# RPMfusion repos are available by default in ublue main images
-# List of rpmfusion packages can be found here:
-# https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
-
-# this installs a package from fedora repos
 dnf5 install -y dnf5-plugins
 
+# Hyprland ecosystem
 dnf5 copr enable -y hermitfeather/hyprland
+
+# GUI display configuration
+dnf5 copr enable -y tofik/nwg-shell
+
+# Animated wallpaper daemon
+dnf5 copr enable -y scottames/awww
 
 dnf5 install -y \
     hyprland \
@@ -25,7 +26,7 @@ dnf5 install -y \
     rofi \
     waybar \
     swaync \
-    swww \
+    awww \
     hypridle \
     hyprlock \
     nwg-displays \
@@ -36,16 +37,20 @@ dnf5 install -y \
     swappy \
     brightnessctl \
     playerctl \
-    pavucontrol
+    pavucontrol \
+    jq \
+    ImageMagick \
+    pamixer \
+    socat \
+    rsync \
+    yad \
+    xdg-utils \
+    xdg-user-dirs
 
+# Don't leave third-party COPRs enabled in the deployed image
+dnf5 copr disable -y scottames/awww
+dnf5 copr disable -y tofik/nwg-shell
 dnf5 copr disable -y hermitfeather/hyprland
-
-# Use a COPR Example:
-#
-# dnf5 -y copr enable ublue-os/staging
-# dnf5 -y install package
-# Disable COPRs so they don't end up enabled on the final image:
-# dnf5 -y copr disable ublue-os/staging
 
 #### Example for enabling a System Unit File
 
