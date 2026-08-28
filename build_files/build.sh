@@ -21,11 +21,13 @@ dnf5 copr enable -y scottames/awww
 dnf5 install -y \
     hyprland \
     hyprland-guiutils \
+    hyprpolkitagent \
     xdg-desktop-portal-hyprland \
+    xdg-desktop-portal-gtk \
+    SwayNotificationCenter \
     uwsm \
     rofi \
     waybar \
-    swaync \
     awww \
     hypridle \
     hyprlock \
@@ -51,7 +53,5 @@ dnf5 install -y \
 dnf5 copr disable -y scottames/awww
 dnf5 copr disable -y tofik/nwg-shell
 dnf5 copr disable -y hermitfeather/hyprland
-
-#### Example for enabling a System Unit File
 
 systemctl enable podman.socket
