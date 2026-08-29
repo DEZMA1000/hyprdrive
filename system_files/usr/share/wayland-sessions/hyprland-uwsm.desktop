@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Hyprland (uwsm-managed)
+Comment=Hyprland compositor managed by UWSM
+Exec=uwsm start hyprland.desktop
+Type=Application
+DesktopNames=Hyprland
